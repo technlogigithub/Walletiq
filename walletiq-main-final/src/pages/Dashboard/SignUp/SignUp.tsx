@@ -7,6 +7,8 @@ import HeroImg from "../../../images/hero-bg-ipad.webp";
 import HeroMobImg from "../../../images/hero-bg-mob.webp";
 import HeroIpadImg from "../../../images/hero-bg-ipad.webp";
 
+import image from "../../../images/login-image.png";
+
 const SignUp = () => {
     const navigate = useNavigate();
     const isSmallScreens = useMediaQuery("(max-width: 743px)");
@@ -21,8 +23,8 @@ const SignUp = () => {
                 {/* <Header hideSecondHeader={true} /> */}
                 <div className="bg-[#0C0E11] text-white signup-height1">
                     <div className="grid grid-cols-12 gap-6 ">
-                        <div className="col-span-12 lg:col-span-6 items-center">
-                            <div className="flex flex-col justify-center items-center p-4">
+                        <div className="col-span-12 lg:col-span-6  flex justify-center items-center">
+                            <div className="flex flex-col justify-center items-center p-4 w-5/6 zindex-1">
                                 <div className="w-full login-card  bg-[#16181F] rounded-md">
                                     <div className="text-center text-white mt-5">
                                         <div className="logo1 flex justify-center items-center m-4">
@@ -79,184 +81,181 @@ const SignUp = () => {
                                         </p>
                                     </div>
                                     <form>
-                                        <div className="grid grid-cols-12 gap-6 px-8">
-                                            <div className="col-span-12 lg:col-span-6">
-                                                <div className="justify-center items-center">
-                                                    <div className="mb-6">
-                                                        <label className="block text-[#9197A4] mb-2">Full Name*</label>
-                                                        <input
-                                                            className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
-                                                            type="text"
-                                                            id="name"
-                                                            name="fullname"
-                                                            required
-                                                        />
-                                                    </div>
-                                                    <div className="mb-6">
-                                                        <label className="block text-[#9197A4] mb-2">Email*</label>
-                                                        <input
-                                                            className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
-                                                            type="email"
-                                                            id="emailaddress"
-                                                            name="emailaddress"
-                                                            required
-                                                        />
-                                                    </div>
-                                                    <div className="mb-6">
-                                                        <div className="flex flex-col">
-                                                            <label htmlFor="password" className="text-sm font-medium mb-1 text-gray-200">
-                                                                Confirm Password*
-                                                            </label>
-                                                            <div className="relative">
-                                                                {/* Password Input */}
-                                                                <input
-                                                                    id="password1"
-                                                                    type={showPassword ? 'text' : 'password'}
-                                                                    value={password}
-                                                                    onChange={(e) => setPassword(e.target.value)}
-                                                                    placeholder="Enter password"
-                                                                    className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
-                                                                />
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 px-8">
+                                        <div className="mb-6">
+                                            <label className="block text-[#9197A4] mb-2">Full Name*</label>
+                                            <input
+                                            className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
+                                            type="text"
+                                            id="name"
+                                            name="fullname"
+                                            required
+                                            placeholder="Enter full name"
+                                            />
+                                        </div>
+                                        <div className="mb-6">
+                                            <label className="block text-[#9197A4] mb-2">Phone Number</label>
+                                            <input
+                                            className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
+                                            type="tel"
+                                            id="phonenumber"
+                                            name="phonenumber"
+                                            placeholder="Enter phone number"
+                                            />
+                                        </div>
+                                        <div className="mb-6">
+                                            <label className="block text-[#9197A4] mb-2">Email Address*</label>
+                                            <input
+                                            className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
+                                            type="email"
+                                            id="emailaddress"
+                                            name="emailaddress"
+                                            required
+                                            placeholder="Enter your email address"
+                                            />
+                                        </div>
+                                        <div className="mb-6">
+                                            <div className="flex flex-col">
+                                            <label htmlFor="password" className="text-sm font-medium mb-1 text-gray-200">
+                                                Password*
+                                            </label>
+                                            <div className="relative">
+                                                {/* Password Input */}
+                                                <input
+                                                id="password"
+                                                type={showPassword ? 'text' : 'password'}
+                                                value={password}
+                                                onChange={(e) => setPassword(e.target.value)}
+                                                placeholder="Enter password"
+                                                className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
+                                                />
 
-                                                                {/* Toggle Button */}
-                                                                <button
-                                                                    type="button"
-                                                                    onClick={() => setShowPassword(!showPassword)}
-                                                                    className="absolute inset-y-0 right-2 flex items-center text-gray-400 hover:text-gray-200"
-                                                                >
-                                                                    {/* Conditional Icon */}
-                                                                    {showPassword ? (
-                                                                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                            <g clip-path="url(#clip0_75_457)">
-                                                                                <path d="M9.32085 9.32251C9.00833 9.63513 8.83281 10.0591 8.83289 10.5011C8.83296 10.9432 9.00864 11.3671 9.32126 11.6796C9.63389 11.9921 10.0579 12.1676 10.4999 12.1676C10.9419 12.1675 11.3658 11.9918 11.6783 11.6792" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                                                                <path d="M14.4008 14.3942C13.2319 15.1256 11.8789 15.5091 10.5 15.5C7.5 15.5 5 13.8334 3 10.5C4.06 8.73336 5.26 7.43503 6.6 6.60503M8.98333 5.65002C9.48253 5.54897 9.99068 5.49871 10.5 5.50003C13.5 5.50003 16 7.16669 18 10.5C17.445 11.425 16.8508 12.2225 16.2183 12.8917" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                                                            </g>
-                                                                            <defs>
-                                                                                <clipPath id="clip0_75_457">
-                                                                                    <rect width="20" height="20" fill="white" transform="translate(0.5 0.5)" />
-                                                                                </clipPath>
-                                                                            </defs>
-                                                                        </svg>
+                                                {/* Toggle Button */}
+                                                <button
+                                                type="button"
+                                                onClick={() => setShowPassword(!showPassword)}
+                                                className="absolute inset-y-0 right-2 flex items-center text-gray-400 hover:text-gray-200"
+                                                >
+                                                    {/* Conditional Icon */}
+                                                    {showPassword ? (
+                                                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_75_457)">
+                                                            <path d="M9.32085 9.32251C9.00833 9.63513 8.83281 10.0591 8.83289 10.5011C8.83296 10.9432 9.00864 11.3671 9.32126 11.6796C9.63389 11.9921 10.0579 12.1676 10.4999 12.1676C10.9419 12.1675 11.3658 11.9918 11.6783 11.6792" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M14.4008 14.3942C13.2319 15.1256 11.8789 15.5091 10.5 15.5C7.5 15.5 5 13.8334 3 10.5C4.06 8.73336 5.26 7.43503 6.6 6.60503M8.98333 5.65002C9.48253 5.54897 9.99068 5.49871 10.5 5.50003C13.5 5.50003 16 7.16669 18 10.5C17.445 11.425 16.8508 12.2225 16.2183 12.8917" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_75_457">
+                                                            <rect width="20" height="20" fill="white" transform="translate(0.5 0.5)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                        </svg>
 
-                                                                    ) : (
-                                                                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                            <g clip-path="url(#clip0_75_444)">
-                                                                                <path d="M8.82085 9.32251C8.50833 9.63513 8.33281 10.0591 8.33289 10.5011C8.33296 10.9432 8.50864 11.3671 8.82126 11.6796C9.13389 11.9921 9.55785 12.1676 9.99989 12.1676C10.4419 12.1675 10.8658 11.9918 11.1783 11.6792" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                                                                <path d="M13.9008 14.3942C12.7319 15.1256 11.3789 15.5091 10 15.5C7 15.5 4.5 13.8334 2.5 10.5C3.56 8.73336 4.76 7.43503 6.1 6.60503M8.48333 5.65002C8.98253 5.54897 9.49068 5.49871 10 5.50003C13 5.50003 15.5 7.16669 17.5 10.5C16.945 11.425 16.3508 12.2225 15.7183 12.8917" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                                                                <path d="M2.5 3L17.5 18" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                                                            </g>
-                                                                            <defs>
-                                                                                <clipPath id="clip0_75_444">
-                                                                                    <rect width="20" height="20" fill="white" transform="translate(0 0.5)" />
-                                                                                </clipPath>
-                                                                            </defs>
-                                                                        </svg>
+                                                        ) : (
+                                                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <g clip-path="url(#clip0_75_444)">
+                                                                <path d="M8.82085 9.32251C8.50833 9.63513 8.33281 10.0591 8.33289 10.5011C8.33296 10.9432 8.50864 11.3671 8.82126 11.6796C9.13389 11.9921 9.55785 12.1676 9.99989 12.1676C10.4419 12.1675 10.8658 11.9918 11.1783 11.6792" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M13.9008 14.3942C12.7319 15.1256 11.3789 15.5091 10 15.5C7 15.5 4.5 13.8334 2.5 10.5C3.56 8.73336 4.76 7.43503 6.1 6.60503M8.48333 5.65002C8.98253 5.54897 9.49068 5.49871 10 5.50003C13 5.50003 15.5 7.16669 17.5 10.5C16.945 11.425 16.3508 12.2225 15.7183 12.8917" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M2.5 3L17.5 18" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                                            </g>
+                                                            <defs>
+                                                                <clipPath id="clip0_75_444">
+                                                                <rect width="20" height="20" fill="white" transform="translate(0 0.5)" />
+                                                                </clipPath>
+                                                            </defs>
+                                                            </svg>
 
-                                                                    )}
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="mb-6">
-                                                        <div className="">
-                                                            <label className="block text-gray-400 text-sm mb-2" htmlFor="cryptocurrency">Cryptocurrency</label>
-                                                            <select id="cryptocurrency" className="block w-full px-4 py-2 bg-[#1E1F28] text-white rounded-md h-12">
-                                                                <option>Choose cryptocurrency</option>
-                                                                <option>BTC</option>
-                                                                <option>ETH</option>
-                                                                <option>RIP</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                        )}
+                                                </button>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div className="mb-6">
+                                        <div className="flex flex-col">
+                                        <label htmlFor="password" className="text-sm font-medium mb-1 text-gray-200">
+                                        Confirm Password*
+                                        </label>
+                                        <div className="relative">
+                                        {/* Password Input */}
+                                        <input
+                                        id="password1"
+                                        type={showPassword ? 'text' : 'password'}
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        placeholder="Enter password"
+                                        className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
+                                        />
+
+                                        {/* Toggle Button */}
+                                        <button
+                                        type="button"
+                                        onClick={() => setShowPassword(!showPassword)}
+                                        className="absolute inset-y-0 right-2 flex items-center text-gray-400 hover:text-gray-200"
+                                        >
+                                        {/* Conditional Icon */}
+                                        {showPassword ? (
+                                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_75_457)">
+                                                        <path d="M9.32085 9.32251C9.00833 9.63513 8.83281 10.0591 8.83289 10.5011C8.83296 10.9432 9.00864 11.3671 9.32126 11.6796C9.63389 11.9921 10.0579 12.1676 10.4999 12.1676C10.9419 12.1675 11.3658 11.9918 11.6783 11.6792" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M14.4008 14.3942C13.2319 15.1256 11.8789 15.5091 10.5 15.5C7.5 15.5 5 13.8334 3 10.5C4.06 8.73336 5.26 7.43503 6.6 6.60503M8.98333 5.65002C9.48253 5.54897 9.99068 5.49871 10.5 5.50003C13.5 5.50003 16 7.16669 18 10.5C17.445 11.425 16.8508 12.2225 16.2183 12.8917" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_75_457">
+                                                            <rect width="20" height="20" fill="white" transform="translate(0.5 0.5)" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+
+                                            ) : (
+                                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <g clip-path="url(#clip0_75_444)">
+                                                        <path d="M8.82085 9.32251C8.50833 9.63513 8.33281 10.0591 8.33289 10.5011C8.33296 10.9432 8.50864 11.3671 8.82126 11.6796C9.13389 11.9921 9.55785 12.1676 9.99989 12.1676C10.4419 12.1675 10.8658 11.9918 11.1783 11.6792" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M13.9008 14.3942C12.7319 15.1256 11.3789 15.5091 10 15.5C7 15.5 4.5 13.8334 2.5 10.5C3.56 8.73336 4.76 7.43503 6.1 6.60503M8.48333 5.65002C8.98253 5.54897 9.49068 5.49871 10 5.50003C13 5.50003 15.5 7.16669 17.5 10.5C16.945 11.425 16.3508 12.2225 15.7183 12.8917" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                                        <path d="M2.5 3L17.5 18" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath id="clip0_75_444">
+                                                            <rect width="20" height="20" fill="white" transform="translate(0 0.5)" />
+                                                        </clipPath>
+                                                    </defs>
+                                                </svg>
+
+                                            )}
+                                        </button>
                                             </div>
-                                            <div className="col-span-12 lg:col-span-6">
-                                                <div className="justify-center items-center">
-                                                    <div className="mb-6">
-                                                        <label className="block text-[#9197A4] mb-2">Phone</label>
-                                                        <input
-                                                            className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
-                                                            type="tel"
-                                                            id="phonenumber"
-                                                            name="phoenNumber"
-                                                        />
-                                                    </div>
-                                                    <div className="mb-6">
-                                                        <div className="flex flex-col">
-                                                            <label htmlFor="password" className="text-sm font-medium mb-1 text-gray-200">
-                                                                Password*
-                                                            </label>
-                                                            <div className="relative">
-                                                                {/* Password Input */}
-                                                                <input
-                                                                    id="password"
-                                                                    type={showPassword ? 'text' : 'password'}
-                                                                    value={password}
-                                                                    onChange={(e) => setPassword(e.target.value)}
-                                                                    placeholder="Enter password"
-                                                                    className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
-                                                                />
-
-                                                                {/* Toggle Button */}
-                                                                <button
-                                                                    type="button"
-                                                                    onClick={() => setShowPassword(!showPassword)}
-                                                                    className="absolute inset-y-0 right-2 flex items-center text-gray-400 hover:text-gray-200"
-                                                                >
-                                                                    {/* Conditional Icon */}
-                                                                    {showPassword ? (
-                                                                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                            <g clip-path="url(#clip0_75_457)">
-                                                                                <path d="M9.32085 9.32251C9.00833 9.63513 8.83281 10.0591 8.83289 10.5011C8.83296 10.9432 9.00864 11.3671 9.32126 11.6796C9.63389 11.9921 10.0579 12.1676 10.4999 12.1676C10.9419 12.1675 11.3658 11.9918 11.6783 11.6792" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                                                                <path d="M14.4008 14.3942C13.2319 15.1256 11.8789 15.5091 10.5 15.5C7.5 15.5 5 13.8334 3 10.5C4.06 8.73336 5.26 7.43503 6.6 6.60503M8.98333 5.65002C9.48253 5.54897 9.99068 5.49871 10.5 5.50003C13.5 5.50003 16 7.16669 18 10.5C17.445 11.425 16.8508 12.2225 16.2183 12.8917" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                                                            </g>
-                                                                            <defs>
-                                                                                <clipPath id="clip0_75_457">
-                                                                                    <rect width="20" height="20" fill="white" transform="translate(0.5 0.5)" />
-                                                                                </clipPath>
-                                                                            </defs>
-                                                                        </svg>
-
-                                                                    ) : (
-                                                                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                            <g clip-path="url(#clip0_75_444)">
-                                                                                <path d="M8.82085 9.32251C8.50833 9.63513 8.33281 10.0591 8.33289 10.5011C8.33296 10.9432 8.50864 11.3671 8.82126 11.6796C9.13389 11.9921 9.55785 12.1676 9.99989 12.1676C10.4419 12.1675 10.8658 11.9918 11.1783 11.6792" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                                                                <path d="M13.9008 14.3942C12.7319 15.1256 11.3789 15.5091 10 15.5C7 15.5 4.5 13.8334 2.5 10.5C3.56 8.73336 4.76 7.43503 6.1 6.60503M8.48333 5.65002C8.98253 5.54897 9.49068 5.49871 10 5.50003C13 5.50003 15.5 7.16669 17.5 10.5C16.945 11.425 16.3508 12.2225 15.7183 12.8917" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                                                                <path d="M2.5 3L17.5 18" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                                                            </g>
-                                                                            <defs>
-                                                                                <clipPath id="clip0_75_444">
-                                                                                    <rect width="20" height="20" fill="white" transform="translate(0 0.5)" />
-                                                                                </clipPath>
-                                                                            </defs>
-                                                                        </svg>
-
-                                                                    )}
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="mb-6">
-                                                        <label className="block text-[#9197A4] mb-2">Referral Id</label>
-                                                        <input
-                                                            className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
-                                                            type="text"
-                                                            id="referralId"
-                                                            name="referralId"
-                                                            required
-                                                        />
-                                                    </div>
-                                                    <div className="mb-6">
-                                                        <label className="block text-[#9197A4] mb-2">Amount</label>
-                                                        <input
-                                                            className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
-                                                            type="number"
-                                                            id="amount"
-                                                            name="amount"
-                                                        />
-                                                    </div>
-                                                </div>
                                             </div>
+                                        </div>
+                                        <div className="mb-6">
+                                            <label className="block text-[#9197A4] mb-2">Referral ID</label>
+                                            <input
+                                            className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
+                                            type="text"
+                                            id="referralId"
+                                            name="referralId"
+                                            required
+                                            placeholder="Enter referral ID"
+                                            />
+                                        </div>
+                                        <div className="mb-6">
+                                            <div className="">
+                                            <label className="block text-gray-400 text-sm mb-2" htmlFor="cryptocurrency">Cryptocurrency</label>
+                                            <select id="cryptocurrency" className="block w-full px-4 py-2 bg-[#1E1F28] text-white rounded-md h-12">
+                                                <option>Choose cryptocurrency</option>
+                                                <option>BTC</option>
+                                                <option>ETH</option>
+                                                <option>RIP</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                        <div className="mb-6">
+                                            <label className="block text-[#9197A4] mb-2">Amount</label>
+                                            <input
+                                            className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
+                                            type="number"
+                                            id="amount"
+                                            name="amount"
+                                            placeholder="Enter amount"
+                                            />
+                                        </div>
                                         </div>
                                         <div className="px-8">
                                             <div className="flex items-center mb-4 text-white mt-2">
@@ -299,7 +298,7 @@ const SignUp = () => {
                             </div>
                         </div>
 
-                        <div className="col-span-12 lg:col-span-6 hidden md:block">
+                        <div className="col-span-12 lg:col-span-6 hidden lg:block">
                             <div className="">
                             {isSmallScreens ? (
                                     <img
@@ -310,15 +309,15 @@ const SignUp = () => {
                                     />
                                 ) : isIpadScreens ? (
                                     <img
-                                        src={HeroIpadImg}
-                                        srcSet={HeroIpadImg}
-                                        className="hero-ipad-bg-img object-contain relative  z-0  float-right"
+                                        src={image}
+                                        srcSet={image}
+                                        className="hero-ipad-img object-contain relative  z-0  float-right"
                                         alt=""
                                     />
                                 ) : (
                                     <img
-                                        src={HeroImg}
-                                        srcSet={HeroImg}
+                                        src={image}
+                                        srcSet={image}
                                         className="hero-bg-img object-contain top-0 z-0   right-[-460px]  float-right"
                                         alt=""
                                     />

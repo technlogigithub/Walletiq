@@ -10,6 +10,8 @@ import Step1 from "../assets/2fa-step1.svg";
 import Step2 from "../assets/2fa-step2.png";
 import Step3 from "../assets/step3.png"
 
+import useMediaQuery from "../../../hooks/useMediaQuery";
+
 
 // import Footer from "../../../components/footer/index";
 
@@ -50,6 +52,8 @@ const STEP2 = "step2";
 const STEP3 = "step3";
 
 const Setting = () => {
+
+    const isBigScreens = useMediaQuery("(min-width: 744px)");
 
     // Step 1
     const [isModalOpen, setModalOpen] = useState(false);
@@ -242,38 +246,45 @@ const Setting = () => {
 
                 </div> */}
 
-                <div className="flex items-center justify-between pb-5">
-                    <div className="flex items-center">
-                        <button className="buttn-step-primary" onClick={()=>handleStepChange(STEP1)}>
-                            Step 1
-                        </button>
-                        <div className={`line-width h-0.5 ${stepSelected === STEP2 || stepSelected === STEP3 ? 'bg-gray-300' : 'bg-[#FFFFFF]'} `}></div>
-                    </div>
+                {isBigScreens ? (
+                    <div className="flex items-center justify-between pb-5">
+                        <div className="flex items-center">
+                            <button className="buttn-step-primary" onClick={()=>handleStepChange(STEP1)}>
+                                Step 1
+                            </button>
+                            <div className={`line-width h-0.5 ${stepSelected === STEP2 || stepSelected === STEP3 ? 'bg-gray-300' : 'bg-[#FFFFFF]'} `}></div>
+                        </div>
 
-                    <div className="flex items-center">
-                        <button className={`${ stepSelected === STEP2 || stepSelected === STEP3 ? 'buttn-step-primary' : 'buttn-step'}`} onClick={()=>handleStepChange(STEP2)}>
-                            Step 2
-                        </button>
-                        <div className={`line-width h-0.5 ${stepSelected === STEP2 || stepSelected === STEP3 ? 'bg-[#FFFFFF]' : 'bg-[#fefefe61]'} `}></div>
-                    </div>
+                        <div className="flex items-center">
+                            <button className={`${ stepSelected === STEP2 || stepSelected === STEP3 ? 'buttn-step-primary' : 'buttn-step'}`} onClick={()=>handleStepChange(STEP2)}>
+                                Step 2
+                            </button>
+                            <div className={`line-width h-0.5 ${stepSelected === STEP2 || stepSelected === STEP3 ? 'bg-[#FFFFFF]' : 'bg-[#fefefe61]'} `}></div>
+                        </div>
 
-                    <div className="flex items-center">
-                        <button className={`${ stepSelected === STEP3 ? 'buttn-step-primary' : 'buttn-step'}`} onClick={()=>handleStepChange(STEP3)}>
-                            Step 3
-                        </button>
+                        <div className="flex items-center">
+                            <button className={`${ stepSelected === STEP3 ? 'buttn-step-primary' : 'buttn-step'}`} onClick={()=>handleStepChange(STEP3)}>
+                                Step 3
+                            </button>
+                        </div>
                     </div>
-                </div>
-                
+                ): null}
+
                 {/** Step 1 */}
 
                 {stepSelected === STEP1 &&
-                    <div className='inner-content flex flex-wrap justify-center p-10'>
-                        <div className="w-[125] text-center">
-                            <img src={Step1} className="w-full" alt="" />
-                        </div>
+                    <div>
+                        <div className='inner-content flex flex-wrap justify-center p-10'>
+                            <div className="w-[125] text-center">
+                                <img src={Step1} className="w-full" alt="" />
+                            </div>
 
-                        <div className="w-full text-center pb-2">
-                            Get the app. Download <span className="text-[#1337FF]">Google Authenticator</span> on your phone.
+                            <div className="w-full text-center pb-2">
+                                Get the app. Download <span className="text-[#1337FF]">Google Authenticator</span> on your phone.
+                            </div>
+                        </div>
+                        <div className="button-container pt-5">
+                            <button className="buttn" onClick={()=>handleStepChange(STEP2)}>  <span> Enable 2FA</span></button>
                         </div>
                     </div>
                 }
@@ -281,28 +292,33 @@ const Setting = () => {
 
                 {/** Step 2 */}
                 {stepSelected === STEP2 &&
-                    <div className='inner-content flex flex-wrap justify-center p-10'>
-                        <div className="w-[125] text-center">
-                            <img src={Step2} className="w-full" alt="" />
-                        </div>
-
-                        <div className="w-full text-center pb-2 mt-5">
-                            Scan the QR code below. Alternatively, you can type  <span className="text-[#1337FF]">the secret key</span> into your authenticator app.
-                        </div>
-
-                        <div className='w-full px-2'>
-                            <label className="block text-white text-sm font-bold mb-2" htmlFor="crypto-hash">Select cryptocurrency</label>
-                            <div className="flex items-center rounded-md">
-                                <div className="w-full copy-hash-input">
-                                    <div className="bg-[#1E1F28] text-[#667085] px-4 py-2.5 radius-left text-sm font-mono overflow-x-auto" id="crypto-hash">
-                                        NFSGCOCHOBIDE53ONRCTKYLZGAYWY5TPGF
-                                    </div>
-                                </div>
-
-                                <button className="bg-[#FEFEFE] text-gray-900 text-sm px-4 py-2 rounded-md font-semibold hover:bg-gray-200 transition duration-200">
-                                    Copy
-                                </button>
+                    <div>
+                        <div className='inner-content flex flex-wrap justify-center p-10'>
+                            <div className="w-[125] text-center">
+                                <img src={Step2} className="w-full" alt="" />
                             </div>
+
+                            <div className="w-full text-center pb-2 mt-5">
+                                Scan the QR code below. Alternatively, you can type  <span className="text-[#1337FF]">the secret key</span> into your authenticator app.
+                            </div>
+
+                            <div className='w-full px-2'>
+                                <label className="block text-white text-sm font-bold mb-2" htmlFor="crypto-hash">Select cryptocurrency</label>
+                                <div className="flex items-center rounded-md">
+                                    <div className="w-full copy-hash-input">
+                                        <div className="bg-[#1E1F28] text-[#667085] px-4 py-2.5 radius-left text-sm font-mono overflow-x-auto" id="crypto-hash">
+                                            NFSGCOCHOBIDE53ONRCTKYLZGAYWY5TPGF
+                                        </div>
+                                    </div>
+
+                                    <button className="bg-[#FEFEFE] text-gray-900 text-sm px-4 py-2 rounded-md font-semibold hover:bg-gray-200 transition duration-200">
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="button-container pt-5">
+                            <button className="buttn" onClick={()=>handleStepChange(STEP3)}>  <span> Enable 2FA</span></button>
                         </div>
                     </div>
                 }
@@ -310,30 +326,39 @@ const Setting = () => {
                 {/** Step 3 */}
 
                 {stepSelected === STEP3 &&
-                    <div className='inner-content flex flex-wrap justify-center p-10'>
-                        <div className="w-[125] text-center">
-                            <img src={Step3} className="w-full" alt="" />
+                    
+                    <div>
+                        <div className='inner-content flex flex-wrap justify-center p-10'>
+                            <div className="w-[125] text-center">
+                                <img src={Step3} className="w-full" alt="" />
+                            </div>
+
+                            <div className="w-full text-center pb-2 mt-5">
+                                Enter Google authenticator code                    
+                            </div>
+
+                            <div className='w-full px-2'>
+                                <input
+                                    className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
+                                    type="text"
+                                    id="referralId"
+                                    name="referralId"
+                                    placeholder='Enter Google authenticator code'
+                                />
+                            </div>
                         </div>
 
-                        <div className="w-full text-center pb-2 mt-5">
-                            Enter Google authenticator code                    
-                        </div>
-
-                        <div className='w-full px-2'>
-                            <input
-                                className="w-full p-2 bg-[#1E1F28] text-white rounded text-base h-12"
-                                type="text"
-                                id="referralId"
-                                name="referralId"
-                                placeholder='Enter Google authenticator code'
-                            />
+                        <div className="button-container pt-5">
+                            <button className="buttn" onClick={()=>handleStepChange(STEP1)}>  <span> Enable 2FA</span></button>
                         </div>
                     </div>
                 }
 
-                <div className="button-container pt-5">
+                
+
+                {/* <div className="button-container pt-5">
                     <button className="buttn">  <span> Enable 2FA</span></button>
-                </div>
+                </div> */}
                 {/* <Button text="Close" onClick={closeModal} /> */}
             </Modal>
 

@@ -9,6 +9,10 @@ import HeroImg from "../../../images/hero-bg-ipad.webp";
 import HeroMobImg from "../../../images/hero-bg-mob.webp";
 import HeroIpadImg from "../../../images/hero-bg-ipad.webp";
 
+import image from "../../../images/login-image.png";
+
+
+
 const Login = () => {
   const navigate = useNavigate();
 
@@ -23,8 +27,8 @@ const Login = () => {
         {/* <Header hideSecondHeader = {true}/> */}
         <div className="bg-[#0C0E11] text-white">
           <div className="grid grid-cols-12 gap-6 ">
-            <div className="col-span-12 lg:col-span-6 items-center">
-              <div className="flex flex-col justify-center items-center p-8">
+            <div className="col-span-12 lg:col-span-6 h-screen flex justify-center items-center ">
+              <div className="flex flex-col1 justify-center items-center p-8 w-5/6 zindex-1">
                 <div className="w-full login-card  bg-[#16181F] rounded-md">
                   <div className="text-center text-white mt-5">
                     <div className="logo1 flex justify-center items-center m-4">
@@ -138,22 +142,22 @@ const Login = () => {
 
                   {isSmallScreens ? (
                       <img
-                          src={HeroMobImg}
-                          srcSet={HeroMobImg}
+                          src={image}
+                          srcSet={image}
                           className="hero-bg-img object-contain top-[-8px] z-0 aspect-[.7] right-[-20px] float-right"
                           alt=""
                       />
                   ) : isIpadScreens ? (
                       <img
-                          src={HeroIpadImg}
-                          srcSet={HeroIpadImg}
-                          className="hero-ipad-bg-img object-contain relative  z-0  float-right"
+                          src={image}
+                          srcSet={image}
+                          className="hero-bg-img object-contain relative  z-0  float-right"
                           alt=""
                       />
                   ) : (
                       <img
-                          src={HeroImg}
-                          srcSet={HeroImg}
+                          src={image}
+                          srcSet={image}
                           className="hero-bg-img object-contain top-0 z-0   right-[-460px]  float-right"
                           alt=""
                       />

@@ -289,3 +289,7 @@
 .hero-bg-img{
     max-width: unset !important;
 }
+
+.zindex-1{
+    z-index: 1;
+}
