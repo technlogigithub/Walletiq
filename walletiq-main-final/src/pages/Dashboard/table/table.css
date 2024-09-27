@@ -1,0 +1,87 @@
+.table-border-bottom {
+    border-bottom: 1px solid #272337;
+}
+
+.table-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.search-logo-position {
+    top: 49%;
+    left: 1.25rem;
+}
+
+.search-input-box {
+    border: 1px solid #272337;
+    background: #14151B;
+    padding: 0.75rem 0 0.75rem 3rem;
+}
+
+.table-header {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.pagination-bg-active {
+    background: rgba(83, 103, 254, 0.16);
+    color: #fff;
+    font-weight: 500;
+}
+
+.pagination-non-active {
+    color: #9197A4;
+}
+
+.table-card {
+    background-color: #14151B;
+    border-radius: 8px;
+}
+
+.ip_address {
+    background-color: #161E22;
+    color: #37CBB0;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.87rem;
+    letter-spacing: 1px;
+}
+
+.Success {
+    background-color: #161E22;
+    color: #37CBB0;
+    padding: 0.5rem 1rem;
+    letter-spacing: 1px;
+}
+
+.Canceled {
+    background-color: #1E161E;
+    color: #D82C60;
+    padding: 0.5rem 1rem;
+    letter-spacing: 1px;
+}
+
+.Pending {
+    background-color: #1F1D1D;
+    color: #E7BC40;
+    padding: 0.5rem 1rem;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 767px) {
+
+    .search-input-width {
+        width: 13rem;
+    }
+
+    
+}
+
+@media screen and (max-width:990px) {
+    .parent-table {
+        overflow-x: auto;
+    }
+}

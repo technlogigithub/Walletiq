@@ -1,0 +1,291 @@
+/* * {
+    font-family: 'Inter';
+} */
+
+.dashboard-bg {
+    background: #0C0E11;
+}
+.parent-spacing {
+    padding:1rem 1.25rem;
+}
+.letter-spacing-1px {
+    /* letter-spacing: 1px; */
+}
+.card-bg {
+    background-color:#14151B;
+}
+.nav-btns {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.divider-right {
+    margin-left: 1.5rem;
+    border-right: 2px solid #272337;
+}
+
+.btn-active {
+    background: #5367FE;
+}
+
+.language-select {
+    background: #16181F;
+    padding: 0.5rem 1rem
+}
+
+.border-radius-top {
+    border-radius: 8px 8px 0 0;  
+}
+
+.border-radius-bottom {
+    border-radius: 0 0 8px 8px;
+}
+
+.header-2 {
+    border-top: 1px solid #272337;
+    border-bottom: 1px solid #272337;
+}
+
+.fs075rem {
+    font-size: 0.75rem;
+}
+
+.he-text-color {
+    color: #6F6E84;
+}
+
+.logo-spacing {
+    padding: 0.5rem 1rem;
+}
+
+.fs1p25rem {
+    font-size: 1.25rem;
+}
+
+.dashboard-bg input[type="checkbox"], 
+.signup-wrapper input[type="checkbox"] {
+    display: block;
+}
+
+.checkbox-anchor {
+    color: #37CBB0;
+    text-decoration: underline;
+}
+
+.fs1rem {
+    font-size: 1rem;
+}
+
+.active-pill{
+    background: #1E1F28;
+    padding: 0.2rem 0.9rem;
+    border-radius: 8px;
+}
+
+.cd-grey-col {
+    color: #9197A4;
+}
+
+.time-block {
+    background: #303044;
+    padding: 0.25rem 1rem;
+    border-radius: 8px;
+}
+
+.lhs-card-bg {
+    background-color: #1E1F28;
+}
+
+.logo-indicator {
+    padding: 0.75rem 1rem;
+    background-color: #292A33;
+    border-radius: 8px;
+}
+
+.input-text-size {
+    font-size: 1.87rem;
+    background-color: transparent;
+}
+
+.fs0p875rem {
+    font-size: 0.875rem;
+}
+
+.compare-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+    border: 1px solid #fcfcfc;
+    border-radius: 8px;
+}
+
+.referal-box {
+    border: 1px solid #1E1F28;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+}
+
+.copy-btn {
+    background-color: #1E1F28;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    letter-spacing: 1px;
+}
+
+.positive {
+    color: #37CBB0;
+    letter-spacing: 1px;
+}
+
+.negative {
+    color: #D82C60;
+    letter-spacing: 1px;
+}
+
+.toggle-switch input:checked ~ .dot {
+    transform: translateX(100%);
+    /* background-color: #5367FE; */
+}
+
+.toggle-switch .peer:checked ~ .peer-checked\:bg-blue-600 {
+    background-color: #202542 !important;
+}
+
+.inactive-btn {
+    background: #1E1F28;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+}
+
+.enable-2a-padding {
+    padding: 0.75rem 1.8rem;
+    border-radius: 12px;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+}
+
+.wallet-id {
+    border: 1px solid #272337;
+    padding: 0.8rem;
+    border-radius: 8px;
+}
+
+.side-btn {
+    padding: 0.9rem;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+.setting-table {
+    padding: 0.34rem 1.5rem;
+}
+
+.setting-table .table-wrapper {
+    padding: 0.5rem !important;
+}
+
+.login-wrapper {
+    overflow-y: hidden;
+    max-height: 100vh;
+    height: 100vh;
+}
+
+.reset-text-padding {
+    padding: 0 9rem;
+}
+
+@media  screen and (max-width:1124px) {
+    .time-block {
+        font-size: 0.85rem;
+    }
+
+    .fs1p25rem {
+        font-size: 0.87rem;
+    }
+
+    .input-text-size {
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (max-width:525px) {
+    .toggle-wrapper {
+        flex-wrap: wrap;
+        justify-content: start;
+        gap: 1rem;
+    }
+
+    .ml-0 {
+        margin-left: 0 !important;
+    }
+
+    .partition-bdr {
+        display: none;
+    }
+
+    .reset-text-padding {
+        padding: 0 4rem;
+    }
+}
+
+/* ------------Login------------- */
+
+.login-card {
+    max-width: 45rem;
+    padding: 1rem 0;
+}
+
+.l-form {
+    padding: 1.5rem 4rem;
+}
+
+.line-width {
+    width: 4.7rem;
+}
+
+.radius-left {
+    border-radius: 0.375rem 0 0 0.375rem;
+}
+
+@media screen and (max-width:767px) {
+    .l-form {
+        padding: 1.5rem 2rem;
+    }
+
+    .referal-center {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .copy-hash-input {
+        width: 78% !important;
+    }
+}
+
+.hidden-icon {
+    display: none;
+}
+
+.text-r {
+    text-align: right;
+}
+
+@media screen and (min-width:1330px) {
+    .signup-height {
+        height: 93.7vh;
+    }
+}
+
+.hero-bg-img{
+    max-width: unset !important;
+}
